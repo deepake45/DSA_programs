@@ -1,0 +1,8 @@
+num1 = int(2.3)
+print(num1)
+num2 = int(-2.8)
+print(num2)
+num3 = float(5)
+print(num3)
+num4 = complex('3+5j')
+print(num4)
