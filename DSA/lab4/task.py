@@ -1,30 +1,41 @@
-def create(self):
-    n = int(input("Enter number of nodes: "))
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-    if n <= 0:
+
+class SinglyLinkedList:
+
+    def __init__(self):
+        self.head = None
+
+    # 1. Create Linked List
+    def create(self):
+        n = int(input("Enter number of nodes: "))
+
+        if n <= 0:
             print("Number of nodes must be greater than 0.")
             return
 
-    for i in range(n):
-        data = int(input(f"Enter data for node {i + 1}: "))
+        for i in range(n):
+            data = int(input(f"Enter data for node {i + 1}: "))
 
-        new_node = Node(data)
+            new_node = Node(data)
 
-        if self.head is None:
-            self.head = new_node
-        else:
-            temp = self.head
+            if self.head is None:
+                self.head = new_node
+            else:
+                temp = self.head
 
-            while temp.next is not None:
-                temp = temp.next
+                while temp.next is not None:
+                    temp = temp.next
 
-            temp.next = new_node
+                temp.next = new_node
 
-    print("Linked List created successfully.")
+        print("Linked List created successfully.")
 
     # 2. Insert at Beginning
     def insert_beginning(self, data):
-
         new_node = Node(data)
 
         new_node.next = self.head
@@ -51,7 +62,6 @@ def create(self):
         print("Node inserted successfully.")
 
     # 4. Insert at Specific Position
-    # Position starts from 1
     def insert_at_position(self, data, position):
 
         if position < 1:
@@ -70,7 +80,7 @@ def create(self):
 
         temp = self.head
 
-        # Move to the node before the required position
+        # Move to node before required position
         for i in range(position - 2):
 
             if temp is None:
@@ -189,7 +199,8 @@ def create(self):
 # ==========================================
 # MAIN PROGRAM
 # ==========================================
-sll = singlyLinkedList()
+
+sll = SinglyLinkedList()
 
 while True:
 
@@ -213,56 +224,40 @@ while True:
     ch = int(input("Enter your choice: "))
 
     if ch == 1:
-
         sll.create()
 
     elif ch == 2:
-
         data = int(input("Enter data: "))
-
         sll.insert_beginning(data)
 
     elif ch == 3:
-
         data = int(input("Enter data: "))
-
         sll.insert_end(data)
 
     elif ch == 4:
-
         data = int(input("Enter data: "))
-
         position = int(input("Enter position (starting from 1): "))
-
         sll.insert_at_position(data, position)
 
     elif ch == 5:
-
         value = int(input("Enter value to delete: "))
-
         sll.delete_by_value(value)
 
     elif ch == 6:
-
         sll.delete_first()
 
     elif ch == 7:
-
         sll.delete_last()
 
     elif ch == 8:
-
         sll.count_nodes()
 
     elif ch == 9:
-
         sll.display()
 
     elif ch == 10:
-
         print("Exiting program...")
         break
 
     else:
-
         print("Invalid choice. Please enter a number between 1 and 10.")
