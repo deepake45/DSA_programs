@@ -9,7 +9,6 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
-    # 1. Create Linked List
     def create(self):
         n = int(input("Enter number of nodes: "))
 
@@ -34,7 +33,6 @@ class SinglyLinkedList:
 
         print("Linked List created successfully.")
 
-    # 2. Insert at Beginning
     def insert_beginning(self, data):
         new_node = Node(data)
 
@@ -43,7 +41,6 @@ class SinglyLinkedList:
 
         print("Node inserted successfully.")
 
-    # 3. Insert at End
     def insert_end(self, data):
         new_node = Node(data)
 
@@ -61,7 +58,6 @@ class SinglyLinkedList:
 
         print("Node inserted successfully.")
 
-    # 4. Insert at Specific Position
     def insert_at_position(self, data, position):
 
         if position < 1:
@@ -70,7 +66,6 @@ class SinglyLinkedList:
 
         new_node = Node(data)
 
-        # Insert at position 1
         if position == 1:
             new_node.next = self.head
             self.head = new_node
@@ -80,7 +75,6 @@ class SinglyLinkedList:
 
         temp = self.head
 
-        # Move to node before required position
         for i in range(position - 2):
 
             if temp is None:
@@ -98,14 +92,12 @@ class SinglyLinkedList:
 
         print("Node inserted successfully.")
 
-    # 5. Delete by Value
     def delete_by_value(self, value):
 
         if self.head is None:
             print("Linked List is empty.")
             return
 
-        # If first node contains the value
         if self.head.data == value:
             self.head = self.head.next
 
@@ -126,7 +118,6 @@ class SinglyLinkedList:
 
         print("Value not found.")
 
-    # 6. Delete First Node
     def delete_first(self):
 
         if self.head is None:
@@ -139,14 +130,12 @@ class SinglyLinkedList:
 
         print("First node deleted:", deleted_value)
 
-    # 7. Delete Last Node
     def delete_last(self):
 
         if self.head is None:
             print("Linked List is empty.")
             return
 
-        # Only one node
         if self.head.next is None:
             deleted_value = self.head.data
 
@@ -166,7 +155,6 @@ class SinglyLinkedList:
 
         print("Last node deleted:", deleted_value)
 
-    # 8. Count Number of Nodes
     def count_nodes(self):
 
         count = 0
@@ -178,7 +166,6 @@ class SinglyLinkedList:
 
         print("Number of nodes:", count)
 
-    # 9. Display / Traverse
     def display(self):
 
         if self.head is None:
@@ -194,11 +181,6 @@ class SinglyLinkedList:
             temp = temp.next
 
         print("None")
-
-
-# ==========================================
-# MAIN PROGRAM
-# ==========================================
 
 sll = SinglyLinkedList()
 
@@ -216,7 +198,7 @@ while True:
     print("6. Delete First Node")
     print("7. Delete Last Node")
     print("8. Count no of nodes")
-    print("9. Display / Traverse")
+    print("9. Display / Traverse")      
     print("10. Exit")
 
     print("======================================")
